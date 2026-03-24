@@ -1,0 +1,44 @@
+class Celular {
+  String marca;
+  String modelo;
+  int bateria;
+
+  Celular(this.marca, this.modelo, this.bateria);
+
+  void mostraStatus() {
+    print("O $marca $modelo está com $bateria% de carga");
+  }
+}
+
+class Gato {
+  void falar() {
+    print("Miau!");
+  }
+}
+
+class Circulo {
+  double centroX;
+  double centroY;
+  double raio;
+  String cor;
+
+  Circulo(this.centroX, this.centroY, this.raio, this.cor);
+
+  String gerarSVG() {
+    return '<circle cx="$centroX" cy="$centroY" r="$raio" fill="$cor" />';
+  }
+}
+
+void main() {
+  // Celular
+  var meuCelular = Celular("Motorola", "G34", 15);
+  meuCelular.mostraStatus();
+
+  // Gato
+  var meuGato = Gato();
+  meuGato.falar();
+
+  // Circulo em SVG
+  var c1 = Circulo(100, 100, 50, "red");
+  print(c1.gerarSVG());
+}
